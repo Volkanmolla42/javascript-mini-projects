@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #cf9aff, #95c0ff);
+  padding-top: 4%;
+  padding-left: 10%;
+
+}
+
+
+.container .create-notes {
+  background: linear-gradient(#9418fd, #571094);
+  outline: 0;
+}
+
+
+
+.note-box {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 500px;
+  margin-left: 15px;
+}
+
+.input-box {
+  max-width: 500px;
+  min-height: 150px;
+}
+
+.icons {
+  width: 40px;
+  margin: 0 10px;
+}
+
+.icons-small {
+  width: 25px;
+}
+
+.deleteBtn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+}
