@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Volkan MOLLA" />
+
+    <link
+      rel="stylesheet"
+      href="../boostrap/css/Bootstrap_css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="rps.css" />
+
+    <title>Rock paper scissors v5</title>
+    <style></style>
+  </head>
+
+  <body class="bg-dark text-white">
+    <div class="container m-0 mx-auto">
+      <div class="row mt-3">
+        <div
+          class="col d-flex flex-column text-center align-items-center justify-content-center mt-2"
+        >
+          <p class="fs-1 fw-bold">Rock Paper Scissors</p>
+          <div>
+            <button
+              type="button"
+              id="buton1"
+              class="bg-transparent gamebuton btnRock border-4"
+            >
+              <img src="img/rock-emoji.png" alt="" />
+            </button>
+            <button
+              type="button"
+              id="buton2"
+              class="bg-transparent gamebuton btnPaper border-4"
+            >
+              <img src="img/paper-emoji.png" alt="" />
+            </button>
+            <button
+              type="button"
+              id="buton3"
+              class="bg-transparent gamebuton btnScissors border-4"
+            >
+              <img src="img/scissors-emoji.png" alt="" />
+            </button>
+          </div>
+          <p class="js-moves mt-4 ms-5"></p>
+          <p class="js-result">Good Luck Have Fun!</p>
+          <p class="js-score fs-5"></p>
+          <button type="button" class="btn btn-outline-primary js-resetScore">
+            Reset score! <br />
+          </button>
+
+          <span class="fs-5 text-white mt-2 confirmReset d-none">
+            <span class="d-block mb-2"
+              >Are you Sure you want to reset the score?</span
+            >
+            <div class="d-flex gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-danger btnYes flex-fill borde"
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btnNo flex-fill"
+              >
+                No
+              </button>
+            </div>
+          </span>
+
+          <button
+            type="button"
+            class="btn btn-outline-warning js-autoButton mt-4"
+          >
+            Auto Play!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="rps.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+img {
+    height: 100px;
+  }
+
+  .gamebuton {
+    border-color: gray;
+    border-style: solid; 
+    border-radius: 100%;
+    padding: 50px;
+    margin: 10px 10px;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.7);
+    transition: all 0.15s;
+
+
+  }
+.gamebuton:hover{
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+}
+  .js-result {
+    font-size: 35px;
+    font-weight: bold;
+    animation: textChange 1s linear;
+  }
+  
+
+  
+
+  .move-icon {
+    height: 80px;
+  }
+
+  .js-moves {
+    font-size: 25px;
+   
+  }
+
+
+  
+.selected {
+  border-color: coral;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+
+}
+.loseAnimation{
+  font-size: 40px;
+    font-weight: bold;
+    animation: textChange 1s ease-in-out;
+    color: rgb(226, 45, 45);
+}
+.winAnimation{
+  font-size: 40px;
+    font-weight: bold;
+    animation: textChange 1s ease-in-out;
+    color: rgb(22, 199, 31);
+} 
+.tieAnimation{
+  font-size: 40px;
+    font-weight: bold;
+    animation: textChange 1s ease-in-out;
+    color: rgb(233, 229, 13);
+}
+@keyframes textChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

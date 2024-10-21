@@ -1,0 +1,128 @@
+:root {
+    --timing: 500ms;
+}
+
+* {
+    font-family: 'Beaufort for LOL', sans-serif;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+html {
+    color-scheme: dark;
+
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    perspective: 1000px;
+}
+
+.sylas-div {
+    position: relative;
+    perspective: 1000px;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+.sylas {
+    width: 350px;
+    aspect-ratio: 9 / 18.5;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all var(--timing) ease;
+
+}
+
+.sylas::after {
+    content: "";
+    position: absolute;
+    inset: 80% .5rem .5rem;
+    translate: 0;
+    transform: translateZ(-100px);
+    background: black;
+    filter: blur(1rem);
+    z-index: 1;
+    transition: rotate var(--timing), translate var(--timing);
+}
+
+.sylas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle 333px, transparent, rgba(0, 0, 0, .8));
+    z-index: 100;
+    opacity: 0;
+
+    transition: opacity var(--timing);
+}
+
+.sylas:hover {
+    rotate: x 30deg;
+
+}
+
+.sylas:hover::before {
+    opacity: 1;
+}
+
+.sylas:hover::after {
+    rotate: x -25deg;
+    translate: 0 60px;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 10;
+}
+
+
+
+.sylas-text,
+.front-image {
+    position: absolute;
+    pointer-events: none;
+}
+
+.sylas-text {
+    text-align: center;
+    font-size: 2rem;
+    z-index: 1000;
+    margin-inline: auto;
+    inset: auto 0px 0rem;
+    padding: 20px 0;
+    border: none;
+    transition: all var(--timing) ease;
+}
+
+.sylas-div:hover .sylas-text {
+    transform: translateY(-40px);
+}
+
+
+.front-image {
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-700px);
+    z-index: 100;
+    transition: var(--timing);
+}
+
+.sylas-div:hover .front-image {
+    opacity: 1;
+    z-index: 100;
+    transform: translateY(-780px);
+
+}

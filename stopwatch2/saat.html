@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Bootstrap_css/bootstrap.min.css">
+    <title>Volkanın saati</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+        }
+
+        .clock {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body class="border">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row border border-secondary-subtle ">
+            <div class="col d-flex justify-content-center gap-1 p-3">
+                <span class="clock" id="minute2">0</span>
+                <span class="clock" id="minute1">0</span>
+                <span class="clock">:</span>
+                <span class="clock" id="second2">0</span>
+                <span class="clock" id="second1">0</span>
+            </div>
+            <div class="buttons d-flex gap-2 pt-3 pb-0">
+                <button type="button" class="btn btn-success w-50" id="startBtn">Start</button>
+                <button type="button" class="btn btn-warning w-50" id="stopBtn">Stop</button>
+            </div>
+            <div class="d-flex my-3">
+                <button type="button" class="btn btn-danger w-100" id="resetBtn">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let minute1Element = document.getElementById('minute1');
+        let minute2Element = document.getElementById('minute2');
+        let second1Element = document.getElementById('second1');
+        let second2Element = document.getElementById('second2');
+        let startButtonElement = document.getElementById("startBtn");
+        let stopButtonElement = document.getElementById("stopBtn");
+        let resetButtonElement = document.getElementById("resetBtn");
+
+        let second1 = 0;
+        let second2 = 0;
+        let minute1 = 0;
+        let minute2 = 0;
+        let intervalId;
+
+        startButtonElement.addEventListener('click', startClock);
+        stopButtonElement.addEventListener('click', stopClock);
+        resetButtonElement.addEventListener('click', resetClock);
+
+        function startClock() {
+            intervalId = setInterval(() => {
+                second1++;
+                if (second1 === 10) {
+                    second1 = 0;
+                    second2++;
+                    if (second2 === 6) {
+                        second2 = 0;
+                        minute1++;
+                        if (minute1 === 10) {
+                            minute1 = 0;
+                            minute2++;
+                            if (minute2 === 6) {
+                                minute2 = 0;
+
+                            }
+                            minute2Element.textContent = minute2;
+                        }
+                        minute1Element.textContent = minute1
+                    }
+                    second2Element.textContent = second2;
+                }
+                second1Element.textContent = second1;
+            }, 1000);
+        }
+
+        function stopClock() {
+            clearInterval(intervalId);
+        }
+
+        function resetClock() {
+            clearInterval(intervalId);
+            startClock();
+            second1 = 0;
+            second2 = 0;
+            minute1 = 0;
+            minute2 = 0;
+            second1Element.textContent = '0';
+            second2Element.textContent = '0';
+            minute1Element.textContent = '0';
+            minute2Element.textContent = '0';
+        }
+    </script>
+</body>
+
+</html>

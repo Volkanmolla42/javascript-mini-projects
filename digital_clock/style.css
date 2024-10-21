@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    background: url(img/nyc.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+#clock {
+    font-family: monospace;
+    font-size: 6.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(4px);
+    width: 70%;
+    min-width: 500px;
+    border-radius: 20px;
+    height: 30%;
+    background-color: hsla(0, 0%, 100%, 0.12);
+    user-select: none;
+}
